@@ -98,3 +98,47 @@ window.markmap = {
         observer.observe(main);
     }
 </script>
+
+<!-- script for menu toggles -->
+<script>
+    var siteMenuToggle = query('.site-menu-toggle');
+    if (siteMenuToggle) {
+    siteMenuToggle.addEventListener('click', function () {
+        document.body.classList.toggle('site-menu-open');
+    });
+    }
+
+    var siteMenuSubmenus = queryAll('.td-sidebar-nav ul ul');
+
+    function setSubmenuClasses(span, nope) {
+    if (!nope) {
+        span.parentNode.classList.toggle('open');
+    }
+    var open = span.parentNode.classList.contains('open');
+    span.classList[open ? 'add' : 'remove']('open');
+    // if (open) {
+    //   span.classList.add('glyphicon-minus');
+    //   span.classList.remove('glyphicon-plus');
+    // }
+    // else {
+    //   span.classList.remove('glyphicon-minus');
+    //   span.classList.add('glyphicon-plus');
+    // }
+    }
+
+    function makeToggleBtn(ul) {
+        var span = document.createElement('span');
+        span.className = 'submenu-toggle';// glyphicon glyphicon-plus';
+        span.addEventListener('click', function () {
+            setSubmenuClasses(span);
+        });
+
+        ul.parentNode.insertBefore(span, ul);
+        return span;
+    }
+
+    siteMenuSubmenus.forEach(function (ul) {
+        var toggleBtn = makeToggleBtn(ul);
+        setSubmenuClasses(toggleBtn, true);
+    });
+</script>
