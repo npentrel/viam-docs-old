@@ -629,3 +629,52 @@ footer small {
 }
 
 /* END scroll to top styling */
+
+.submenu-toggle {
+  display: inline;
+}
+
+
+// .td-sidebar-nav__section-title .with-child {
+//     display: inline-block;
+//   content: "+";
+
+  // &:before {
+  //   display: inline-block;
+  //   height: 16px;
+  //   width: 16px;
+  //   text-align: center;
+  //   vertical-align: middle;
+  //   content: '+';
+  // }
+
+// }
+
+// .submenu-toggle {
+//   // position: absolute;
+
+//   vertical-align: middle;
+//   height: 16px;
+
+//   width: 16px;
+
+//   &:before {
+//     display: inline-block;
+//     height: 16px;
+//     width: 16px;
+//     text-align: center;
+//     vertical-align: middle;
+
+//     content: '+';
+//   }
+//   &.open {
+//     &:before {
+//       content: '-';
+//     }
+//   }
+// }
+
+// > ul > li > .submenu-toggle {
+//   height: 18px;
+//   top: 10px;
+// }

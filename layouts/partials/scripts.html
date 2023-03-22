@@ -101,29 +101,30 @@ window.markmap = {
 
 <!-- script for menu toggles -->
 <script>
-    var siteMenuToggle = query('.site-menu-toggle');
-    if (siteMenuToggle) {
-    siteMenuToggle.addEventListener('click', function () {
-        document.body.classList.toggle('site-menu-open');
-    });
-    }
+    // var siteMenuToggle = query('.site-menu-toggle');
+    // if (siteMenuToggle) {
+    // siteMenuToggle.addEventListener('click', function () {
+    //     document.body.classList.toggle('site-menu-open');
+    // });
+    // }
 
-    var siteMenuSubmenus = queryAll('.td-sidebar-nav ul ul');
+    var siteMenuSubmenus = document.getElementsByClassName('td-sidebar-nav__section-title td-sidebar-nav__section with-child');
 
     function setSubmenuClasses(span, nope) {
-    if (!nope) {
-        span.parentNode.classList.toggle('open');
-    }
-    var open = span.parentNode.classList.contains('open');
-    span.classList[open ? 'add' : 'remove']('open');
-    // if (open) {
-    //   span.classList.add('glyphicon-minus');
-    //   span.classList.remove('glyphicon-plus');
-    // }
-    // else {
-    //   span.classList.remove('glyphicon-minus');
-    //   span.classList.add('glyphicon-plus');
-    // }
+        if (!nope) {
+            span.parentNode.classList.toggle('open');
+        }
+        var open = span.parentNode.classList.contains('open');
+        span.classList[open ? 'add' : 'remove']('open');
+
+        // if (open) {
+        //   span.classList.add('glyphicon-minus');
+        //   span.classList.remove('glyphicon-plus');
+        // }
+        // else {
+        //   span.classList.remove('glyphicon-minus');
+        //   span.classList.add('glyphicon-plus');
+        // }
     }
 
     function makeToggleBtn(ul) {
@@ -133,12 +134,13 @@ window.markmap = {
             setSubmenuClasses(span);
         });
 
-        ul.parentNode.insertBefore(span, ul);
+        ul.appendChild(span, ul);
         return span;
     }
 
-    siteMenuSubmenus.forEach(function (ul) {
-        var toggleBtn = makeToggleBtn(ul);
-        setSubmenuClasses(toggleBtn, true);
-    });
+    // for (let m of siteMenuSubmenus) {
+    //     console.log(m);
+    //     var toggleBtn = makeToggleBtn(m);
+    //     setSubmenuClasses(m, true);
+    // };
 </script>

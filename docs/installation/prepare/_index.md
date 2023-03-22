@@ -1,6 +1,7 @@
 ---
 title: "Prepare your Computer"
 linkTitle: "Prepare for viam-server"
+manualLinkTitle: "_blank"
 weight: 10
 no_list: true
 type: docs
